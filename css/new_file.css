@@ -1,0 +1,26 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#score,#time{
+	width: 100px;
+	height: 30px;
+	background: cyan;
+	margin: 50px auto;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 10px;
+}
+#game{
+	width: 350px;
+	height: 350px;
+	background: pink;
+	margin: 50px auto;
+	border-radius: 10px;
+}
+#game img{
+	width: 100px;
+	height: 100px;
+    margin-left: 10px;
+	margin-top: 10px;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<link rel="stylesheet" href="css/new_file.css"/>
+<body>
+	<div id="score">
+		显示分数
+	</div>
+	<div id="game">
+		<!--3*3九宫格  默认出现都是地鼠的洞洞-->
+		<img src="img/5.jpg"/>
+		<img src="img/5.jpg"/>
+		<img src="img/5.jpg"/>
+		<img src="img/5.jpg"/>
+		<img src="img/5.jpg"/>
+		<img src="img/5.jpg"/>
+		<img src="img/5.jpg"/>
+		<img src="img/5.jpg"/>
+		<img src="img/5.jpg"/>
+	
+	<div id="time">
+		显示时间
+	</div>
+	<!--播放音频标签   audio  controls滚动条  autoplay自动播放-->
+	<audio src="img/1副本.mp3" controls="controls" id="music" autoplay="autoplay"></audio>
+</body>
+<script src = "js/main.js"></script>
+<!-- <script>
+// img.src = "img/2.gif";
+// img.src = "img/5.jpg";
+function beatMouse(){
+	this.init();
+}
+beatMouse.prototype = {
+	constructor:beatMouse,//constructor是一个指针，指向构造函数 beatMouse
+	init:function(){
+		this.gameBox = document.getElementById("game");
+		this.mouse = this.gameBox.children;
+		this.scoreNum = document.getElementById("score");
+		this.timeNum = document.getElementById("time");
+		this.gameTimer = setInterval(this.show_hide.bind(this),500);
+		this.count = 0;
+		this.stopTimer = setInterval(this.stop.bind(this),1000);
+		this.time = 7;
+	},
+	show_hide:function(){
+		var x = Math.floor(Math.random()*9);
+		this.mouse[x].src =  "img/2.gif";
+		var x = Math.floor(Math.random()*9);
+		this.mouse[x].src =  "img/5.jpg";
+		for(var i = 0 ; i < this.mouse.length ; i++){
+			this.mouse[i].index = i;
+			this.mouse[i].onclick = this.change.bind(this);
+		}
+	},
+	change:function(event){
+		var evt = event || window.event;
+		var index = evt.target.index;
+		// console.log(index);
+		var indexImg = this.mouse[index].src;
+		if (indexImg.charAt(indexImg.length - 5) == 2) {
+			this.count ++;
+			this.mouse[index].src = "img/5.jpg";
+			this.scoreNum.innerHTML = "分数为" + this.count;
+		}
+		this.end = this.count;
+	},
+	stop:function(){
+		this.time -- ;
+		this.timeNum.innerHTML = "时间为" + this.time;
+		if (this.time == 0 ) {
+			clearInterval(this.gameTimer);
+			clearInterval(this.stopTimer);
+			document.getElementById("music").pause();
+			for(var i = 0 ; i < 9 ;i++){
+				this.mouse[i].src = "img/5.jpg";
+			}
+		}
+	}
+}
+
+
+new beatMouse();
+</script> -->
+</html>
